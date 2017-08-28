@@ -3,13 +3,14 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Babatunde Asifat-- Developer -- @basifat
 
 # THANKS
-
+    Thanks to everyone reading this.
     <name>
 
 # TECHNOLOGY COLOPHON
-
-    HTML5, CSS3
+    Django
+    HTML5 Boilerplate, CSS3
+    Twitter Bootstrap
     jQuery, Modernizr

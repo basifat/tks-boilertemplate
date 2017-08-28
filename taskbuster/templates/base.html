@@ -25,10 +25,18 @@
 
         <script src="{% static 'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js' %}"></script>
     </head>
+
+{% block head_css %}{% endblock %}
+{% block head_javascript %}{% endblock %}
     <body>
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+
+<link rel="shortcut icon" href="{% static 'favicon.ico' %}" 
+  type="image/x-icon">
+
+{% block navbar %}
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
@@ -54,16 +62,20 @@
       </div>
     </nav>
 
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    {# <div class="jumbotron">
       <div class="container">
         <h1>Hello, world!</h1>
         <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
         <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
       </div>
-    </div>
+    </div> #}
 
-    <div class="container">
+   {#  <div class="container">
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
@@ -81,9 +93,10 @@
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
-      </div>
+      </div> #}
 
       <hr>
+      <div class="container">
 
       <footer>
         <p>&copy; Company 2015</p>
@@ -104,5 +117,7 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
+
+         {% block footer_javascript %}{% endblock %}
     </body>
 </html>
