@@ -71,13 +71,13 @@ LANGUAGES = (
 ROOT_URLCONF = 'taskbuster.urls'
 
 LOCALE_PATHS = (
-        os.path.join(BASE_DIR, 'taskbuster/locale').replace('\\', '/'),
+        os.path.join(BASE_DIR, 'locale').replace('\\', '/'),
                 )
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'taskbuster/templates').replace('\\', '/')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\', '/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,11 +125,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     #os.path.dirname(os.path.dirname(BASE_DIR))
-    os.path.join(BASE_DIR, 'taskbuster/static').replace('\\', '/'),
+    os.path.join(BASE_DIR, 'static').replace('\\', '/'),
 
     )
 
 
 
 
-#print ("base dir path", TEMPLATES)
+#print ("base dir path", BASE_DIR)

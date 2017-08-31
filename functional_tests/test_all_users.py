@@ -57,7 +57,7 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
 
     def test_internationalization(self):
         for lang, h1_test in [('en', 'Welcome to TaskBuster!'), 
-                                        ('ca', 'benvingut a TaskBuster!')]:
+                                        ('ca', 'Benvingut a TaskBuster!')]:
             activate(lang)
             self.browser.get(self.get_full_url('home'))
             h1 = self.browser.find_element_by_tag_name('h1')
@@ -72,7 +72,7 @@ class HomeNewVisitorTest(StaticLiveServerTestCase):
             local_date = self.browser.find_element_by_id('locale-date')
             non_local_date = self.browser.find_element_by_id('non-locale-date')
             self.assertEqual(formats.date_format(today, use_l10n=True), 
-                                local_date.txt)
+                                local_date.text)
             self.assertEqual(today.strftime('%Y-%m-%d'), non_local_date.text)
 
     def test_time_zone(self):
